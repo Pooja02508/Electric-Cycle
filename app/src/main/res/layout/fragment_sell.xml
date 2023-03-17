@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.SellFragment">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:sliderAnimationDuration="600"
+                    android:layout_centerInParent="true"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorEnabled="true"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="15dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="3dp"
+                    app:sliderIndicatorRadius="2dp"
+                    app:sliderIndicatorSelectedColor="#5A5A5A"
+                    app:sliderIndicatorUnselectedColor="#FFF"
+                    app:sliderScrollTimeInSec="1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="10dp"/>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Explore Service"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="start|center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/kids_cycle"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/type1"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/circle_shape" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kids Cycle"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:padding="5dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/non_gear"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/type2"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/circle_shape" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Non-Gear Cycle"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:padding="5dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/gear_cycle"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/type3"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/circle_shape" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gear Cycle"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:padding="5dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/assemble_cycle"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/type4"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/circle_shape" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Assemble New Cycle"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:padding="5dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/e_bike"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/type5"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/circle_shape" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="e-Bike"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:padding="5dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/imported_bicycle"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/kids_cycle"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/circle_shape" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Imported Bicycle"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:padding="5dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+</FrameLayout>

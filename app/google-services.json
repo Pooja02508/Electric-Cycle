@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "978006408079",
+    "project_id": "electric-cycle-71ecb",
+    "storage_bucket": "electric-cycle-71ecb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978006408079:android:f5a5c10e06f4fb85b1a9fa",
+        "android_client_info": {
+          "package_name": "electric.cycle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "978006408079-gj2nv06bj99581gcapo7mj565lqoa5f9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5tJhN27lHmjMTCzZHeGiTPO4mbFAFMzw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "978006408079-gj2nv06bj99581gcapo7mj565lqoa5f9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

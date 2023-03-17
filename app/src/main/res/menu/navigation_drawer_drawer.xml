@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home" />
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_profile"
+            android:title="Profile" />
+
+        <item
+            android:id="@+id/nav_b1"
+            android:icon="@drawable/ic_bike"
+            android:title="Hero Cycle" />
+        <item
+            android:id="@+id/nav_b2"
+            android:icon="@drawable/ic_bike"
+            android:title="Geekay Bikes " />
+        <item
+            android:id="@+id/nav_b4"
+            android:icon="@drawable/ic_bike"
+            android:title="Nibe Motors" />
+        <item
+            android:id="@+id/nav_b5"
+            android:icon="@drawable/ic_bike"
+            android:title="Swagtron" />
+        <item
+            android:id="@+id/nav_b6"
+            android:icon="@drawable/ic_bike"
+            android:title="Addmotor" />
+        <item
+            android:id="@+id/nav_b7"
+            android:icon="@drawable/ic_bike"
+            android:title="Ancheer" />
+        <item
+            android:id="@+id/nav_b8"
+            android:icon="@drawable/ic_bike"
+            android:title="Amego" />
+        <item
+            android:id="@+id/nav_b9"
+            android:icon="@drawable/ic_bike"
+            android:title="Aostirmotor" />
+        <item
+            android:id="@+id/nav_b10"
+            android:icon="@drawable/ic_bike"
+            android:title="Ariel Rider" />
+        <item
+            android:id="@+id/nav_b11"
+            android:icon="@drawable/ic_bike"
+            android:title="Aventon" />
+        <item
+            android:id="@+id/nav_b12"
+            android:icon="@drawable/ic_bike"
+            android:title="Batch" />
+        <item
+            android:id="@+id/nav_b13"
+            android:icon="@drawable/ic_bike"
+            android:title="Bee Cool Bikes" />
+        <item
+            android:id="@+id/nav_b14"
+            android:icon="@drawable/ic_bike"
+            android:title="Benelli" />
+        <item
+            android:id="@+id/nav_b15"
+            android:icon="@drawable/ic_bike"
+            android:title="Benno" />
+        <item
+            android:id="@+id/nav_b16"
+            android:icon="@drawable/ic_bike"
+            android:title="BESV" />
+        <item
+            android:id="@+id/nav_b17"
+            android:icon="@drawable/ic_bike"
+            android:title="BH Bikes" />
+        <item
+            android:id="@+id/nav_b18"
+            android:icon="@drawable/ic_bike"
+            android:title="Big Cat" />
+        <item
+            android:id="@+id/nav_b19"
+            android:icon="@drawable/ic_bike"
+            android:title="Biktrix" />
+        <item
+            android:id="@+id/nav_b20"
+            android:icon="@drawable/ic_bike"
+            android:title="Bintelli" />
+
+        <item
+            android:id="@+id/nav_b21"
+            android:icon="@drawable/ic_bike"
+            android:title="Biomega" />
+        <item
+            android:id="@+id/nav_b22"
+            android:icon="@drawable/ic_bike"
+            android:title="Biria" />
+        <item
+            android:id="@+id/nav_b23"
+            android:icon="@drawable/ic_bike"
+            android:title="Blix" />
+        <item
+            android:id="@+id/nav_b24"
+            android:icon="@drawable/ic_bike"
+            android:title="BMEBIKES" />
+        <item
+            android:id="@+id/nav_b25"
+            android:icon="@drawable/ic_bike"
+            android:title="Bolton Electric Bikes" />
+        <item
+            android:id="@+id/nav_b26"
+            android:icon="@drawable/ic_bike"
+            android:title="BPM Imports" />
+        <item
+            android:id="@+id/nav_b27"
+            android:icon="@drawable/ic_bike"
+            android:title="Brompton" />
+        <item
+            android:id="@+id/nav_b28"
+            android:icon="@drawable/ic_bike"
+            android:title="Bulls" />
+        <item
+            android:id="@+id/nav_b29"
+            android:icon="@drawable/ic_bike"
+            android:title="Bunch Bikes" />
+        <item
+            android:id="@+id/nav_b30"
+            android:icon="@drawable/ic_bike"
+            android:title="Butchers &amp; Bicycles" />
+        <item
+            android:id="@+id/nav_b31"
+            android:icon="@drawable/ic_bike"
+            android:title="Buzz Bikes" />
+        <item
+            android:id="@+id/nav_b32"
+            android:icon="@drawable/ic_bike"
+            android:title="California Bicycle Factory" />
+        <item
+            android:id="@+id/nav_b33"
+            android:icon="@drawable/ic_bike"
+            android:title="Cannondale" />
+        <item
+            android:id="@+id/nav_b34"
+            android:icon="@drawable/ic_bike"
+            android:title="Cero" />
+        <item
+            android:id="@+id/nav_b35"
+            android:icon="@drawable/ic_bike"
+            android:title="Charge Bikes" />
+        <item
+            android:id="@+id/nav_b36"
+            android:icon="@drawable/ic_bike"
+            android:title="Civia" />
+        <item
+            android:id="@+id/nav_b37"
+            android:icon="@drawable/ic_bike"
+            android:title="Cobac" />
+        <item
+            android:id="@+id/nav_b38"
+            android:icon="@drawable/ic_bike"
+            android:title="Co-Op (REI brand)" />
+        <item
+            android:id="@+id/nav_b39"
+            android:icon="@drawable/ic_bike"
+            android:title="Corratec" />
+        <item
+            android:id="@+id/nav_b40"
+            android:icon="@drawable/ic_bike"
+            android:title="Cube" />
+        <item
+            android:id="@+id/nav_b41"
+            android:icon="@drawable/ic_bike"
+            android:title="Cyrusher" />
+        <item
+            android:id="@+id/nav_b42"
+            android:icon="@drawable/ic_bike"
+            android:title="DAY 6" />
+        <item
+            android:id="@+id/nav_b43"
+            android:icon="@drawable/ic_bike"
+            android:title="Desiknio" />
+        <item
+            android:id="@+id/nav_b44"
+            android:icon="@drawable/ic_bike"
+            android:title="DJ Bikes" />
+        <item
+            android:id="@+id/nav_b45"
+            android:icon="@drawable/ic_bike"
+            android:title="Doheny" />
+        <item
+            android:id="@+id/nav_b46"
+            android:icon="@drawable/ic_bike"
+            android:title="DŌST Bikes" />
+        <item
+            android:id="@+id/nav_b47"
+            android:icon="@drawable/ic_bike"
+            android:title="DYU" />
+        <item
+            android:id="@+id/nav_b48"
+            android:icon="@drawable/ic_bike"
+            android:title="Eahora" />
+        <item
+            android:id="@+id/nav_b49"
+            android:icon="@drawable/ic_bike"
+            android:title="EccoBike" />
+        <item
+            android:id="@+id/nav_b50"
+            android:icon="@drawable/ic_bike"
+            android:title="EcoMotion Bikes" />
+        <item
+            android:id="@+id/nav_b51"
+            android:icon="@drawable/ic_bike"
+            android:title="Ecotric" />
+        <item
+            android:id="@+id/nav_b52"
+            android:icon="@drawable/ic_bike"
+            android:title="E-Glide" />
+        <item
+            android:id="@+id/nav_b53"
+            android:icon="@drawable/ic_bike"
+            android:title="e-JOE Bike" />
+        <item
+            android:id="@+id/nav_b54"
+            android:icon="@drawable/ic_bike"
+            android:title="Elby" />
+        <item
+            android:id="@+id/nav_b55"
+            android:icon="@drawable/ic_bike"
+            android:title="Electra" />
+        <item
+            android:id="@+id/nav_b56"
+            android:icon="@drawable/ic_bike"
+            android:title="Electric Bike Company" />
+        <item
+            android:id="@+id/nav_b57"
+            android:icon="@drawable/ic_bike"
+            android:title="Electric Fat Bike Company" />
+        <item
+            android:id="@+id/nav_b58"
+            android:icon="@drawable/ic_bike"
+            android:title="Electric Bike Technologies" />
+        <item
+            android:id="@+id/nav_b59"
+            android:icon="@drawable/ic_bike"
+            android:title="E-Lux Electric Bikes" />
+        <item
+            android:id="@+id/nav_b60"
+            android:icon="@drawable/ic_bike"
+            android:title="Emojo" />
+        <item
+            android:id="@+id/nav_b61"
+            android:icon="@drawable/ic_bike"
+            android:title="Energie Cycles " />
+        <item
+            android:id="@+id/nav_b62"
+            android:icon="@drawable/ic_bike"
+            android:title="Enzo eBikes" />
+        <item
+            android:id="@+id/nav_b63"
+            android:icon="@drawable/ic_bike"
+            android:title="eProdigy" />
+        <item
+            android:id="@+id/nav_b64"
+            android:icon="@drawable/ic_bike"
+            android:title="Espin" />
+        <item
+            android:id="@+id/nav_b65"
+            android:icon="@drawable/ic_bike"
+            android:title="ET.Cycle" />
+        <item
+            android:id="@+id/nav_b66"
+            android:icon="@drawable/ic_bike"
+            android:title="Eunorau" />
+        <item
+            android:id="@+id/nav_b67"
+            android:icon="@drawable/ic_bike"
+            android:title="Euphree" />
+        <item
+            android:id="@+id/nav_b68"
+            android:icon="@drawable/ic_bike"
+            android:title="EVELO" />
+        <item
+            android:id="@+id/nav_b69"
+            android:icon="@drawable/ic_bike"
+            android:title="EVO" />
+        <item
+            android:id="@+id/nav_b70"
+            android:icon="@drawable/ic_bike"
+            android:title="EZ Pedaler" />
+        <item
+            android:id="@+id/nav_b71"
+            android:icon="@drawable/ic_bike"
+            android:title="Fantic" />
+        <item
+            android:id="@+id/nav_b72"
+            android:icon="@drawable/ic_bike"
+            android:title="Faraday" />
+        <item
+            android:id="@+id/nav_b73"
+            android:icon="@drawable/ic_bike"
+            android:title="Felt" />
+        <item
+            android:id="@+id/nav_b74"
+            android:icon="@drawable/ic_bike"
+            android:title="Fiido" />
+        <item
+            android:id="@+id/nav_b75"
+            android:icon="@drawable/ic_bike"
+            android:title="Flash" />
+        <item
+            android:id="@+id/nav_b76"
+            android:icon="@drawable/ic_bike"
+            android:title="FLX Ebikes" />
+        <item
+            android:id="@+id/nav_b77"
+            android:icon="@drawable/ic_bike"
+            android:title="Focus" />
+        <item
+            android:id="@+id/nav_b78"
+            android:icon="@drawable/ic_bike"
+            android:title="Fuji" />
+        <item
+            android:id="@+id/nav_b79"
+            android:icon="@drawable/ic_bike"
+            android:title="Furo Systems" />
+        <item
+            android:id="@+id/nav_b80"
+            android:icon="@drawable/ic_bike"
+            android:title="Gazelle" />
+        <item
+            android:id="@+id/nav_b81"
+            android:icon="@drawable/ic_bike"
+            android:title="Genze" />
+        <item
+            android:id="@+id/nav_b82"
+            android:icon="@drawable/ic_bike"
+            android:title="Gepida" />
+        <item
+            android:id="@+id/nav_b83"
+            android:icon="@drawable/ic_bike"
+            android:title="Ghost" />
+        <item
+            android:id="@+id/nav_b84"
+            android:icon="@drawable/ic_bike"
+            android:title="Giant" />
+        <item
+            android:id="@+id/nav_b85"
+            android:icon="@drawable/ic_bike"
+            android:title="Gocycle" />
+        <item
+            android:id="@+id/nav_b86"
+            android:icon="@drawable/ic_bike"
+            android:title="GoTrax" />
+        <item
+            android:id="@+id/nav_b87"
+            android:icon="@drawable/ic_bike"
+            android:title="Go Power" />
+        <item
+            android:id="@+id/nav_b88"
+            android:icon="@drawable/ic_bike"
+            android:title="Gyroor" />
+        <item
+            android:id="@+id/nav_b89"
+            android:icon="@drawable/ic_bike"
+            android:title="Haibike" />
+        <item
+            android:id="@+id/nav_b90"
+            android:icon="@drawable/ic_bike"
+            android:title="Haoqi" />
+        <item
+            android:id="@+id/nav_b91"
+            android:icon="@drawable/ic_bike"
+            android:title="Haro" />
+        <item
+            android:id="@+id/nav_b92"
+            android:icon="@drawable/ic_bike"
+            android:title="Heybike" />
+        <item
+            android:id="@+id/nav_b93"
+            android:icon="@drawable/ic_bike"
+            android:title="Hilltopper" />
+        <item
+            android:id="@+id/nav_b94"
+            android:icon="@drawable/ic_bike"
+            android:title="Himiway" />
+        <item
+            android:id="@+id/nav_b95"
+            android:icon="@drawable/ic_bike"
+            android:title="Honbike" />
+        <item
+            android:id="@+id/nav_b96"
+            android:icon="@drawable/ic_bike"
+            android:title="HPC" />
+        <item
+            android:id="@+id/nav_b97"
+            android:icon="@drawable/ic_bike"
+            android:title="HP Velotechnik" />
+        <item
+            android:id="@+id/nav_b98"
+            android:icon="@drawable/ic_bike"
+            android:title="Husqvarna Bicycles" />
+        <item
+            android:id="@+id/nav_b99"
+            android:icon="@drawable/ic_bike"
+            android:title="iGO" />
+        <item
+            android:id="@+id/nav_b100"
+            android:icon="@drawable/ic_bike"
+            android:title="IZIP" />
+        <item
+            android:id="@+id/nav_b101"
+            android:icon="@drawable/ic_bike"
+            android:title="Jetson" />
+        <item
+            android:id="@+id/nav_b102"
+            android:icon="@drawable/ic_bike"
+            android:title="Juiced Bikes" />
+        <item
+            android:id="@+id/nav_b103"
+            android:icon="@drawable/ic_bike"
+            android:title="Junto" />
+        <item
+            android:id="@+id/nav_b104"
+            android:icon="@drawable/ic_bike"
+            android:title="JupiterBikes" />
+        <item
+            android:id="@+id/nav_b105"
+            android:icon="@drawable/ic_bike"
+            android:title="Kalkhoff" />
+        <item
+            android:id="@+id/nav_b106"
+            android:icon="@drawable/ic_bike"
+            android:title="KBO" />
+        <item
+            android:id="@+id/nav_b107"
+            android:icon="@drawable/ic_bike"
+            android:title="Kona" />
+        <item
+            android:id="@+id/nav_b108"
+            android:icon="@drawable/ic_bike"
+            android:title="Kuake" />
+        <item
+            android:id="@+id/nav_b109"
+            android:icon="@drawable/ic_bike"
+            android:title="Lapierre" />
+        <item
+            android:id="@+id/nav_b110"
+            android:icon="@drawable/ic_bike"
+            android:title="Lemond" />
+        <item
+            android:id="@+id/nav_b111"
+            android:icon="@drawable/ic_bike"
+            android:title="Liberty Trike" />
+        <item
+            android:id="@+id/nav_b112"
+            android:icon="@drawable/ic_bike"
+            android:title="Life EV" />
+        <item
+            android:id="@+id/nav_b113"
+            android:icon="@drawable/ic_bike"
+            android:title="Liv" />
+        <item
+            android:id="@+id/nav_b114"
+            android:icon="@drawable/ic_bike"
+            android:title="Luna Cycle" />
+        <item
+            android:id="@+id/nav_b115"
+            android:icon="@drawable/ic_bike"
+            android:title="M1-Sporttechnik" />
+        <item
+            android:id="@+id/nav_b116"
+            android:icon="@drawable/ic_bike"
+            android:title="Macwheel" />
+        <item
+            android:id="@+id/nav_b117"
+            android:icon="@drawable/ic_bike"
+            android:title="Magnum" />
+        <item
+            android:id="@+id/nav_b118"
+            android:icon="@drawable/ic_bike"
+            android:title="Magicycle" />
+        <item
+            android:id="@+id/nav_b119"
+            android:icon="@drawable/ic_bike"
+            android:title="Maxfoot Electric Bike" />
+        <item
+            android:id="@+id/nav_b120"
+            android:icon="@drawable/ic_bike"
+            android:title="Metakoo" />
+        <item
+            android:id="@+id/nav_b121"
+            android:icon="@drawable/ic_bike"
+            android:title="M2S Bikes" />
+        <item
+            android:id="@+id/nav_b122"
+            android:icon="@drawable/ic_bike"
+            android:title="Mod Bikes" />
+        <item
+            android:id="@+id/nav_b123"
+            android:icon="@drawable/ic_bike"
+            android:title="Mokwheel" />
+        <item
+            android:id="@+id/nav_b124"
+            android:icon="@drawable/ic_bike"
+            android:title="Mondraker" />
+        <item
+            android:id="@+id/nav_b125"
+            android:icon="@drawable/ic_bike"
+            android:title="Montague" />
+        <item
+            android:id="@+id/nav_b126"
+            android:icon="@drawable/ic_bike"
+            android:title="Motiv" />
+        <item
+            android:id="@+id/nav_b127"
+            android:icon="@drawable/ic_bike"
+            android:title="Moustache Bikes" />
+        <item
+            android:id="@+id/nav_b128"
+            android:icon="@drawable/ic_bike"
+            android:title="Nakto" />
+        <item
+            android:id="@+id/nav_b129"
+            android:icon="@drawable/ic_bike"
+            android:title="Ness" />
+        <item
+            android:id="@+id/nav_b130"
+            android:icon="@drawable/ic_bike"
+            android:title="Nicolai Bikes" />
+        <item
+            android:id="@+id/nav_b131"
+            android:icon="@drawable/ic_bike"
+            android:title="NCM" />
+        <item
+            android:id="@+id/nav_b132"
+            android:icon="@drawable/ic_bike"
+            android:title="OHM" />
+        <item
+            android:id="@+id/nav_b133"
+            android:icon="@drawable/ic_bike"
+            android:title="Optibike" />
+        <item
+            android:id="@+id/nav_b134"
+            android:icon="@drawable/ic_bike"
+            android:title="Opus" />
+        <item
+            android:id="@+id/nav_b135"
+            android:icon="@drawable/ic_bike"
+            android:title="Orbea" />
+        <item
+            android:id="@+id/nav_b136"
+            android:icon="@drawable/ic_bike"
+            android:title="Outrider" />
+        <item
+            android:id="@+id/nav_b137"
+            android:icon="@drawable/ic_bike"
+            android:title="Oyama" />
+        <item
+            android:id="@+id/nav_b138"
+            android:icon="@drawable/ic_bike"
+            android:title="Paselec" />
+        <item
+            android:id="@+id/nav_b139"
+            android:icon="@drawable/ic_bike"
+            android:title="Pedego Electric Bikes" />
+        <item
+            android:id="@+id/nav_b140"
+            android:icon="@drawable/ic_bike"
+            android:title="Pegasus" />
+        <item
+            android:id="@+id/nav_b141"
+            android:icon="@drawable/ic_bike"
+            android:title="Piaggio" />
+        <item
+            android:id="@+id/nav_b142"
+            android:icon="@drawable/ic_bike"
+            android:title="Pivot Cycles" />
+        <item
+            android:id="@+id/nav_b143"
+            android:icon="@drawable/ic_bike"
+            android:title="Polarna" />
+        <item
+            android:id="@+id/nav_b144"
+            android:icon="@drawable/ic_bike"
+            android:title="Populo" />
+        <item
+            android:id="@+id/nav_b145"
+            android:icon="@drawable/ic_bike"
+            android:title="Priority Bicycles" />
+        <item
+            android:id="@+id/nav_b146"
+            android:icon="@drawable/ic_bike"
+            android:title="ProdecoTech" />
+        <item
+            android:id="@+id/nav_b147"
+            android:icon="@drawable/ic_bike"
+            android:title="Propella" />
+        <item
+            android:id="@+id/nav_b148"
+            android:icon="@drawable/ic_bike"
+            android:title="Pure Cycles" />
+        <item
+            android:id="@+id/nav_b149"
+            android:icon="@drawable/ic_bike"
+            android:title="Qualisports" />
+        <item
+            android:id="@+id/nav_b150"
+            android:icon="@drawable/ic_bike"
+            android:title="QuietKat" />
+        <item
+            android:id="@+id/nav_b151"
+            android:icon="@drawable/ic_bike"
+            android:title="Rad Power Bikes" />
+        <item
+            android:id="@+id/nav_b152"
+            android:icon="@drawable/ic_bike"
+            android:title="Raleigh" />
+        <item
+            android:id="@+id/nav_b153"
+            android:icon="@drawable/ic_bike"
+            android:title="Rambo Bikes" />
+        <item
+            android:id="@+id/nav_b154"
+            android:icon="@drawable/ic_bike"
+            android:title="Rattan" />
+        <item
+            android:id="@+id/nav_b155"
+            android:icon="@drawable/ic_bike"
+            android:title="Retrospec" />
+        <item
+            android:id="@+id/nav_b156"
+            android:icon="@drawable/ic_bike"
+            android:title="Revelo" />
+        <item
+            android:id="@+id/nav_b157"
+            android:icon="@drawable/ic_bike"
+            android:title="Revolve" />
+        <item
+            android:id="@+id/nav_b158"
+            android:icon="@drawable/ic_bike"
+            android:title="Ride1Up" />
+        <item
+            android:id="@+id/nav_b159"
+            android:icon="@drawable/ic_bike"
+            android:title="Ride Scoozy" />
+        <item
+            android:id="@+id/nav_b160"
+            android:icon="@drawable/ic_bike"
+            android:title="Riese &amp; Müller" />
+        <item
+            android:id="@+id/nav_b161"
+            android:icon="@drawable/ic_bike"
+            android:title="Rize Bikes" />
+        <item
+            android:id="@+id/nav_b162"
+            android:icon="@drawable/ic_bike"
+            android:title="RRocky Mountain" />
+        <item
+            android:id="@+id/nav_b163"
+            android:icon="@drawable/ic_bike"
+            android:title="Schwinn" />
+        <item
+            android:id="@+id/nav_b164"
+            android:icon="@drawable/ic_bike"
+            android:title="Scott" />
+        <item
+            android:id="@+id/nav_b165"
+            android:icon="@drawable/ic_bike"
+            android:title="Smartmotion" />
+        <item
+            android:id="@+id/nav_b166"
+            android:icon="@drawable/ic_bike"
+            android:title="Sondors" />
+        <item
+            android:id="@+id/nav_b167"
+            android:icon="@drawable/ic_bike"
+            android:title="Soul Beach Cruisers" />
+        <item
+            android:id="@+id/nav_b168"
+            android:icon="@drawable/ic_bike"
+            android:title="Specialized" />
+        <item
+            android:id="@+id/nav_b169"
+            android:icon="@drawable/ic_bike"
+            android:title="Stealth Electric Bikes" />
+        <item
+            android:id="@+id/nav_b170"
+            android:icon="@drawable/ic_bike"
+            android:title="Stromer" />
+        <item
+            android:id="@+id/nav_b171"
+            android:icon="@drawable/ic_bike"
+            android:title="Surface604" />
+        <item
+            android:id="@+id/nav_b172"
+            android:icon="@drawable/ic_bike"
+            android:title="Surly" />
+        <item
+            android:id="@+id/nav_b173"
+            android:icon="@drawable/ic_bike"
+            android:title="Super73" />
+        <item
+            android:id="@+id/nav_b174"
+            android:icon="@drawable/ic_bike"
+            android:title="Tern" />
+        <item
+            android:id="@+id/nav_b175"
+            android:icon="@drawable/ic_bike"
+            android:title="The Ride" />
+        <item
+            android:id="@+id/nav_b176"
+            android:icon="@drawable/ic_bike"
+            android:title="Tower" />
+        <item
+            android:id="@+id/nav_b177"
+            android:icon="@drawable/ic_bike"
+            android:title="Trek" />
+        <item
+            android:id="@+id/nav_b178"
+            android:icon="@drawable/ic_bike"
+            android:title="Troxus" />
+        <item
+            android:id="@+id/nav_b179"
+            android:icon="@drawable/ic_bike"
+            android:title="Turboant" />
+        <item
+            android:id="@+id/nav_b180"
+            android:icon="@drawable/ic_bike"
+            android:title="Urban Arrow" />
+        <item
+            android:id="@+id/nav_b181"
+            android:icon="@drawable/ic_bike"
+            android:title="Urtopia" />
+        <item
+            android:id="@+id/nav_b182"
+            android:icon="@drawable/ic_bike"
+            android:title="Vanmoof" />
+        <item
+            android:id="@+id/nav_b183"
+            android:icon="@drawable/ic_bike"
+            android:title="Vello" />
+        <item
+            android:id="@+id/nav_b184"
+            android:icon="@drawable/ic_bike"
+            android:title="Velotric" />
+        <item
+            android:id="@+id/nav_b185"
+            android:icon="@drawable/ic_bike"
+            android:title="VoltBike" />
+        <item
+            android:id="@+id/nav_b186"
+            android:icon="@drawable/ic_bike"
+            android:title="Vvolt" />
+        <item
+            android:id="@+id/nav_b187"
+            android:icon="@drawable/ic_bike"
+            android:title="Wallke Ebikes" />
+        <item
+            android:id="@+id/nav_b188"
+            android:icon="@drawable/ic_bike"
+            android:title="Wing Bikes" />
+        <item
+            android:id="@+id/nav_b189"
+            android:icon="@drawable/ic_bike"
+            android:title="Woom" />
+        <item
+            android:id="@+id/nav_b190"
+            android:icon="@drawable/ic_bike"
+            android:title="Xtracycle" />
+        <item
+            android:id="@+id/nav_b191"
+            android:icon="@drawable/ic_bike"
+            android:title="Yamaha" />
+        <item
+            android:id="@+id/nav_b192"
+            android:icon="@drawable/ic_bike"
+            android:title="Yuba" />
+        <item
+            android:id="@+id/nav_b193"
+            android:icon="@drawable/ic_bike"
+            android:title="Zooz" />
+        <item
+            android:id="@+id/nav_b194"
+            android:icon="@drawable/ic_bike"
+            android:title="Zugo Bike" />
+
+    </group>
+</menu>
