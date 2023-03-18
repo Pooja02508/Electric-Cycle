@@ -1,7 +1,10 @@
 package electric.cycle.Fragments;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Address;
@@ -27,6 +30,11 @@ import android.widget.Toast;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -40,8 +48,10 @@ import electric.cycle.Activities.WebViewActivity;
 
 public class HomeFragment extends Fragment implements BikeAdapter.ItemClickListener{
 
-
+    SharedPreferences sp;
     TextView loaction_text;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference=firebaseDatabase.getInstance().getReference("UserDetails");
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,8 +61,30 @@ public class HomeFragment extends Fragment implements BikeAdapter.ItemClickListe
 
         loaction_text=root.findViewById(R.id.location_text);
 
-        String UserLocation=getActivity().getIntent().getStringExtra("UserLocation");
-        loaction_text.setText(UserLocation);
+        sp = getActivity().getSharedPreferences("login",MODE_PRIVATE);
+        String MobileNumber=sp.getString("Mobile",null);
+
+
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if(snapshot.hasChild(MobileNumber)){
+                    final String getUserCity=snapshot.child(MobileNumber).child("userCity").getValue(String.class);
+                    loaction_text.setText(getUserCity);
+                }
+                else{
+                    Toast.makeText(getActivity(), "Please Sign up.", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
         RecyclerView bikeRV = root.findViewById(R.id.bikeRV);
 

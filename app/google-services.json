@@ -1,42 +1,33 @@
 {
   "project_info": {
-    "project_number": "978006408079",
-    "firebase_url": "https://electric-cycle-71ecb-default-rtdb.firebaseio.com",
-    "project_id": "electric-cycle-71ecb",
-    "storage_bucket": "electric-cycle-71ecb.appspot.com"
+    "project_number": "444715651174",
+    "project_id": "electric-cycle-d979a",
+    "storage_bucket": "electric-cycle-d979a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:978006408079:android:f5a5c10e06f4fb85b1a9fa",
+        "mobilesdk_app_id": "1:444715651174:android:4b93dfb977331ffef05da7",
         "android_client_info": {
           "package_name": "electric.cycle"
         }
       },
       "oauth_client": [
         {
-          "client_id": "978006408079-smhpu6gljjtfgb1aq6o6nssasucm6cla.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "electric.cycle",
-            "certificate_hash": "0cc79a0eb4be1ac451897461fbd7c2f6c2c13364"
-          }
-        },
-        {
-          "client_id": "978006408079-gj2nv06bj99581gcapo7mj565lqoa5f9.apps.googleusercontent.com",
+          "client_id": "444715651174-lhctt82h0dc5ghbqn2gqipeq05ud5j44.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA5tJhN27lHmjMTCzZHeGiTPO4mbFAFMzw"
+          "current_key": "AIzaSyBlf9TjXTI9QUK3QpCR7mbHHGPmkSK3lBY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "978006408079-gj2nv06bj99581gcapo7mj565lqoa5f9.apps.googleusercontent.com",
+              "client_id": "444715651174-lhctt82h0dc5ghbqn2gqipeq05ud5j44.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
