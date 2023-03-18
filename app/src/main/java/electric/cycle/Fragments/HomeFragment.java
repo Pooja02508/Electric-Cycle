@@ -40,8 +40,7 @@ import electric.cycle.Activities.WebViewActivity;
 
 public class HomeFragment extends Fragment implements BikeAdapter.ItemClickListener{
 
-    FusedLocationProviderClient fusedLocationProviderClient;
-    private  final  static int REQUEST_CODE=100;
+
     TextView loaction_text;
 
     @Override
@@ -52,8 +51,8 @@ public class HomeFragment extends Fragment implements BikeAdapter.ItemClickListe
 
         loaction_text=root.findViewById(R.id.location_text);
 
-        fusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(getActivity());
-        getLastLocation();
+        String UserLocation=getActivity().getIntent().getStringExtra("UserLocation");
+        loaction_text.setText(UserLocation);
 
         RecyclerView bikeRV = root.findViewById(R.id.bikeRV);
 
@@ -663,58 +662,5 @@ public class HomeFragment extends Fragment implements BikeAdapter.ItemClickListe
         startActivity(intent);
     }
 
-    private void getLastLocation() {
-        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
 
-            fusedLocationProviderClient.getLastLocation()
-                    .addOnSuccessListener(new OnSuccessListener<Location>() {
-                        @Override
-                        public void onSuccess(Location location) {
-                            if (location !=null){
-                                Geocoder geocoder=new Geocoder(getActivity(), Locale.getDefault());
-                                List<Address> addresses= null;
-                                try {
-                                    addresses = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
-                                    loaction_text.setText(addresses.get(0).getAddressLine(0));
-//                                    city.setText("City :"+addresses.get(0).getLocality());
-//                                    country.setText("Country :"+addresses.get(0).getCountryName());
-
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-
-
-
-                            }
-
-                        }
-                    });
-
-
-        }else
-        {
-
-            askPermission();
-
-        }
-    }
-
-    private void askPermission() {
-        ActivityCompat.requestPermissions(getActivity(), new String[]
-                {Manifest.permission.ACCESS_FINE_LOCATION},REQUEST_CODE);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        if (requestCode==REQUEST_CODE){
-            if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                getLastLocation();
-            }
-            else {
-                Toast.makeText(getActivity(), "Required Permission", Toast.LENGTH_SHORT).show();
-            }
-        }
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
 }

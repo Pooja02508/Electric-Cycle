@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "978006408079",
+    "firebase_url": "https://electric-cycle-71ecb-default-rtdb.firebaseio.com",
     "project_id": "electric-cycle-71ecb",
     "storage_bucket": "electric-cycle-71ecb.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "978006408079-smhpu6gljjtfgb1aq6o6nssasucm6cla.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "electric.cycle",
+            "certificate_hash": "0cc79a0eb4be1ac451897461fbd7c2f6c2c13364"
+          }
+        },
         {
           "client_id": "978006408079-gj2nv06bj99581gcapo7mj565lqoa5f9.apps.googleusercontent.com",
           "client_type": 3

@@ -44,6 +44,8 @@ public class NavigationDrawer extends AppCompatActivity {
         binding = NavigationDrawerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        String UserLocation=getIntent().getStringExtra("UserLocation");
+
         setSupportActionBar(binding.appBarNavigationDrawer.toolbar);
 //        binding.appBarNavigationDrawer.fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -103,6 +105,9 @@ public class NavigationDrawer extends AppCompatActivity {
                 switch (id){
 
                     case R.id.nav_profile:startActivity(intent2);
+                        break;
+                    case R.id.nav_home:startActivity(new Intent(getApplicationContext(),NavigationDrawer.class));
+                        finish();
                         break;
 
                     case  R.id.nav_b1:intent.putExtra("Website Link","https://electriccycle.online/contents/en-us/p193_Hero-Lectro-Bikes-Company-Buy--Zugo--Electric-Cycles-online.html");

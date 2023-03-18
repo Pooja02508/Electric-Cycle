@@ -49,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         sp = getSharedPreferences("login",MODE_PRIVATE);
+        String UserLocation=getIntent().getStringExtra("UserLocation");
 
         if(sp.getBoolean("logged",false)){
             goToMainActivity();
@@ -60,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent=new Intent(getApplicationContext(), SignUp.class);
+                intent.putExtra("UserLocation",UserLocation);
                 startActivity(intent);
             }
         });
@@ -68,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent=new Intent(getApplicationContext(), NavigationDrawer.class);
+                intent.putExtra("UserLocation",UserLocation);
                 startActivity(intent);
             }
         });

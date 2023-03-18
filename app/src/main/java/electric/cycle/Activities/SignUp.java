@@ -77,7 +77,9 @@ public class SignUp extends AppCompatActivity {
 
 
         sp = getSharedPreferences("login",MODE_PRIVATE);
+        String UserLocation=getIntent().getStringExtra("UserLocation");
 
+        city.setText(UserLocation);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("UserDetails");
@@ -89,7 +91,7 @@ public class SignUp extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
             }
         });
-        login_here.setOnClickListener(new View.OnClickListener() {
+        skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),NavigationDrawer.class));
