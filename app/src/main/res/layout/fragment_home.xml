@@ -8,11 +8,50 @@
     android:id="@+id/fragment_container">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/location_border">
+
+        <ImageView
+            android:id="@+id/change_location"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_location_on_24"/>
+
+        <TextView
+            android:id="@+id/location_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Location"
+            android:gravity="start|center"
+            android:padding="5dp"
+            android:textSize="16dp"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bikeRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="5dp" />
+
+    </LinearLayout>
 
 
 </FrameLayout>

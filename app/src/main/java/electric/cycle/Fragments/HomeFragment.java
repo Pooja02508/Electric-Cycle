@@ -23,7 +23,8 @@ import electric.cycle.Activities.WebViewActivity;
 
 public class HomeFragment extends Fragment implements BikeAdapter.ItemClickListener{
 
-
+    FusedLocationProviderClient fusedLocationProviderClient;
+    private  final  static int REQUEST_CODE=100;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,6 +32,8 @@ public class HomeFragment extends Fragment implements BikeAdapter.ItemClickListe
 
         View root= inflater.inflate(R.layout.fragment_home, container, false);
 
+        fusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(getActivity());
+        getLastLocation();
 
         RecyclerView bikeRV = root.findViewById(R.id.bikeRV);
 
