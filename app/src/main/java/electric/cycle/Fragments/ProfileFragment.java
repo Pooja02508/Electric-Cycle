@@ -58,38 +58,47 @@ public class ProfileFragment extends Fragment {
         user_city=root.findViewById(R.id.user_city);
         user_mobile=root.findViewById(R.id.user_mobile);
 
+        if(MobileNumber==null){
+            user_name.setText("");
+            user_mobile.setText("");
+            user_email.setText("");
+            user_city.setText("");
+        }
+        else{
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.hasChild(MobileNumber)){
 
-                if(snapshot.hasChild(MobileNumber)){
-
-                    final String getUserName=snapshot.child(MobileNumber).child("userName").getValue(String.class);
-                    final String getUserMobile=snapshot.child(MobileNumber).child("userMobile").getValue(String.class);
-                    final String getUserEmail=snapshot.child(MobileNumber).child("userEmail").getValue(String.class);
-                    final String getUserCity=snapshot.child(MobileNumber).child("userCity").getValue(String.class);
+                        final String getUserName=snapshot.child(MobileNumber).child("userName").getValue(String.class);
+                        final String getUserMobile=snapshot.child(MobileNumber).child("userMobile").getValue(String.class);
+                        final String getUserEmail=snapshot.child(MobileNumber).child("userEmail").getValue(String.class);
+                        final String getUserCity=snapshot.child(MobileNumber).child("userCity").getValue(String.class);
 
 
-                    user_name.setText(getUserName);
-                    user_mobile.setText(getUserMobile);
-                    user_email.setText(getUserEmail);
-                    user_city.setText(getUserCity);
+                        user_name.setText(getUserName);
+                        user_mobile.setText(getUserMobile);
+                        user_email.setText(getUserEmail);
+                        user_city.setText(getUserCity);
 
+
+                    }
+                    else{
+
+                        Toast.makeText(getActivity(), "Please Sign up.", Toast.LENGTH_SHORT).show();
+                    }
 
                 }
-                else{
 
-                    Toast.makeText(getActivity(), "Please Sign up.", Toast.LENGTH_SHORT).show();
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
                 }
+            });
+        }
 
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
 
         return root;

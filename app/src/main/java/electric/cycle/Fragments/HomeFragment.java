@@ -48,6 +48,8 @@ import electric.cycle.Activities.WebViewActivity;
 
 public class HomeFragment extends Fragment implements BikeAdapter.ItemClickListener{
 
+
+    String UserLocation;
     SharedPreferences sp;
     TextView loaction_text;
     FirebaseDatabase firebaseDatabase;
@@ -63,27 +65,32 @@ public class HomeFragment extends Fragment implements BikeAdapter.ItemClickListe
 
         sp = getActivity().getSharedPreferences("login",MODE_PRIVATE);
         String MobileNumber=sp.getString("Mobile",null);
+        String UserLocation=getActivity().getIntent().getStringExtra("UserLocation");
 
+        if(MobileNumber==null){
+            loaction_text.setText(""+UserLocation);
 
+        }
+        else{
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.hasChild(MobileNumber)){
+                        final String getUserCity=snapshot.child(MobileNumber).child("userCity").getValue(String.class);
+                        loaction_text.setText(getUserCity);
+                    }
+                    else{
+                        Toast.makeText(getActivity(), "Please Sign up.", Toast.LENGTH_SHORT).show();
+                    }
 
-                if(snapshot.hasChild(MobileNumber)){
-                    final String getUserCity=snapshot.child(MobileNumber).child("userCity").getValue(String.class);
-                    loaction_text.setText(getUserCity);
                 }
-                else{
-                    Toast.makeText(getActivity(), "Please Sign up.", Toast.LENGTH_SHORT).show();
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
                 }
-
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+            });
+        }
 
 
         RecyclerView bikeRV = root.findViewById(R.id.bikeRV);
