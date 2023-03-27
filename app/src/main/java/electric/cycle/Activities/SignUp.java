@@ -242,6 +242,7 @@ public class SignUp extends AppCompatActivity {
             String stringSenderEmail = "electriccycleonline@gmail.com";
             String stringReceiverEmail = edtEmail.getText().toString();
             String stringPasswordSenderEmail = "dhfctspndpwxagzn";
+            String stringAdminEmail = "electriccycleonline@gmail.com";
 
             String stringHost = "smtp.gmail.com";
 
@@ -261,11 +262,14 @@ public class SignUp extends AppCompatActivity {
 
             MimeMessage mimeMessage = new MimeMessage(session);
             mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(stringReceiverEmail));
+            mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(stringAdminEmail));
 
 
+            mimeMessage.setSubject("Electric Cycle Registration");
+            mimeMessage.setText("Hello "+ edtName.getText().toString().trim()+"\nYou have successfully registered in Electric Cycle." +
+                    "\n User Email Id: "+edtEmail.getText().toString().trim()+"\n User Mobile Number: "+edtPhone.getText().toString().trim()+
+                    "\n User Password: "+edtPassword.getText().toString().trim()+"\n User Address: " +city.getText().toString().trim());
 
-            mimeMessage.setSubject("Rice Delivery Registration");
-            mimeMessage.setText("Hello "+ edtName.getText().toString()+"\nYou have successfully registered in Electric Cycle.");
 
             Thread thread = new Thread(new Runnable() {
                 @Override
