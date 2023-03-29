@@ -47,7 +47,7 @@ public class ProfileFragment extends Fragment {
 
 
         sp = getActivity().getSharedPreferences("login",MODE_PRIVATE);
-        String MobileNumber=sp.getString("Mobile",null);
+        String MobileNumber=sp.getString("UserMobile",null);
 
 
         mAuth = FirebaseAuth.getInstance();

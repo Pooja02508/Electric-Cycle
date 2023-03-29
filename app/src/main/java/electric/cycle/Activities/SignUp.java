@@ -48,14 +48,14 @@ public class SignUp extends AppCompatActivity {
     SharedPreferences sp;
 
     private FirebaseAuth mAuth;
-    private EditText edtPhone,edtName,edtEmail, edtOTP,edtPassword;
-    private Button verifyOTPBtn, generateOTPBtn;
+    private EditText edtPhone,edtName,edtEmail,edtPassword;
+    private Button verifyOTPBtn;
     TextView login_here,skip;
-    private String verificationId;
     EditText city;
     UserDetails userDetails;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    boolean isAllFieldsChecked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +68,7 @@ public class SignUp extends AppCompatActivity {
         edtName = findViewById(R.id.idName);
         edtEmail = findViewById(R.id.idEmail);
         edtPassword=findViewById(R.id.idPassword);
-        edtOTP = findViewById(R.id.idOtp);
         verifyOTPBtn = findViewById(R.id.idVerify);
-        generateOTPBtn = findViewById(R.id.idGetOtp);
         city=findViewById(R.id.idCity);
         login_here=findViewById(R.id.login_here);
         skip=findViewById(R.id.skip);
@@ -98,143 +96,126 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
-
-        generateOTPBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (TextUtils.isEmpty(edtPhone.getText().toString()) || TextUtils.isEmpty(edtEmail.getText().toString()) ||
-                        TextUtils.isEmpty(edtName.getText().toString()) ||TextUtils.isEmpty(city.getText().toString()) ||TextUtils.isEmpty(edtPhone.getText().toString())) {
-                    Toast.makeText(SignUp.this, "Please enter all details.", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    String phone = "+91" + edtPhone.getText().toString();
-                    Toast.makeText(getApplicationContext(),"OTP sent to your mobile number",Toast.LENGTH_SHORT).show();
-                    sendVerificationCode(phone);
-                }
-            }
-        });
-
         verifyOTPBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(edtOTP.getText().toString())) {
-                    Toast.makeText(SignUp.this, "Please enter OTP", Toast.LENGTH_SHORT).show();
-                } else {
-                    verifyCode(edtOTP.getText().toString());
+//                if (TextUtils.isEmpty(edtOTP.getText().toString())) {
+//                    Toast.makeText(SignUp.this, "Please enter OTP", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    verifyCode(edtOTP.getText().toString());
+//                }
+                isAllFieldsChecked = CheckAllFields();
+                if (isAllFieldsChecked) {
+                    registerNewUser();
                 }
             }
         });
     }
+    private void registerNewUser() {
+        // Take the value of two edit texts in Strings
+        String email, password;
+        email = edtEmail.getText().toString();
+        password = edtPassword.getText().toString();
 
-    private void signInWithCredential(PhoneAuthCredential credential) {
-        mAuth.signInWithCredential(credential)
+        // Validations for input email and password
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(getApplicationContext(), "Please enter email!!", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(getApplicationContext(), "Please enter password!!", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        // create new user or register new user
+        mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                    public void onComplete(@NonNull Task<AuthResult> task)
+                    {
                         if (task.isSuccessful()) {
 
+                            String phone="+91"+edtPhone.getText().toString();
 
-                            Toast.makeText(SignUp.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                            sp.edit().putBoolean("logged",true).apply();
-                            sp.edit().putString("Mobile",edtPhone.getText().toString().trim()).apply();
+                            userDetails.setUserName(edtName.getText().toString());
+                            userDetails.setUserEmail(edtEmail.getText().toString());
+                            userDetails.setUserCity(city.getText().toString());
+                            userDetails.setUserMobile(edtPhone.getText().toString());
+                            userDetails.setUserPassword(edtPassword.getText().toString());
 
-                            Intent i = new Intent(SignUp.this, NavigationDrawer.class);
-                            i.putExtra("Mobile Number",edtPhone.getText().toString().trim());
-                            startActivity(i);
-                            finish();
-                        } else {
-                            Toast.makeText(SignUp.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+
+                            databaseReference.child("UserDetails").addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    if(snapshot.hasChild(phone)){
+                                        Toast.makeText(getApplicationContext(), "User already exists.", Toast.LENGTH_SHORT).show();
+                                    }
+                                    else{
+                                        databaseReference.child(phone).setValue(userDetails);
+
+                                        Toast.makeText(getApplicationContext(), "Registration Successful", Toast.LENGTH_SHORT).show();
+                                        sendEmail();
+                                        sp.edit().putBoolean("logged",true).apply();
+                                        sp.edit().putString("UserMobile",phone).apply();
+                                        sp.edit().putString("UserName",edtName.getText().toString()).apply();
+                                        Intent i = new Intent(SignUp.this, NavigationDrawer.class);
+                                        i.putExtra("UserMobile",phone);
+                                        i.putExtra("UserName",edtName.getText().toString());
+                                        startActivity(i);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+                                    Toast.makeText(getApplicationContext(), "Fail to add data " + error, Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+                        }
+                        else {
+                            // Registration failed
+                            Toast.makeText(getApplicationContext(), "Registration failed!! Please try again later", Toast.LENGTH_LONG).show();
+
                         }
                     }
                 });
     }
 
-
-    private void sendVerificationCode(String number) {
-        PhoneAuthOptions options =
-                PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber(number)
-                        .setTimeout(60L, TimeUnit.SECONDS)
-                        .setActivity(this)
-                        .setCallbacks(mCallBack)
-                        .build();
-        PhoneAuthProvider.verifyPhoneNumber(options);
-    }
-
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks
-
-            mCallBack = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-
-        @Override
-        public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-            super.onCodeSent(s, forceResendingToken);
-            verificationId = s;
+    private boolean CheckAllFields() {
+        if (edtName.getText().toString().length() == 0) {
+            edtName.setError("Username is required");
+            return false;
+        }
+        if (edtEmail.getText().toString().length() == 0) {
+            edtEmail.setError("Email is required");
+            return false;
+        }
+        if (city.getText().toString().length() == 0) {
+            city.setError("Address is required");
+            return false;
+        }
+        if (edtPhone.getText().toString().length() == 0) {
+            edtPhone.setError("Mobile is required");
+            return false;
+        }
+        else if (edtPhone.getText().toString().length() < 10) {
+            edtPhone.setError("Enter valid mobile number");
+            return false;
         }
 
-        @Override
-        public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
-
-            final String code = phoneAuthCredential.getSmsCode();
-
-            if (code != null) {
-                edtOTP.setText(code);
-                verifyCode(code);
-            }
+        if (edtPassword.getText().toString().length() == 0) {
+            edtPassword.setError("Password is required");
+            return false;
+        }
+        else if (edtPassword.getText().toString().length() < 8) {
+            edtPassword.setError("Password must be minimum 8 characters");
+            return false;
         }
 
-        @Override
-        public void onVerificationFailed(FirebaseException e) {
-            Toast.makeText(SignUp.this, e.getMessage(), Toast.LENGTH_LONG).show();
-        }
-    };
-
-    private void verifyCode(String code) {
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
-
-        String UserName = edtName.getText().toString().trim();
-        String EmailId = edtEmail.getText().toString().trim();
-        String Address = city.getText().toString().trim();
-        String Mobile = edtPhone.getText().toString().trim();
-        String Password = edtPassword.getText().toString().trim();
-
-
-        addData(UserName,EmailId,Address,Mobile,Password);
-        sendEmail();
-        signInWithCredential(credential);
+        return true;
     }
 
-
-    public void addData(String UserName,String EmailId,String Address,String Mobile,String Password){
-
-        userDetails.setUserName(UserName);
-        userDetails.setUserEmail(EmailId);
-        userDetails.setUserCity(Address);
-        userDetails.setUserMobile(Mobile);
-        userDetails.setUserPassword(Password);
-
-
-
-        databaseReference.child("UserDetails").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChild(Mobile)){
-                    Toast.makeText(getApplicationContext(), "User already exists.", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    databaseReference.child(Mobile).setValue(userDetails);
-
-                    Toast.makeText(getApplicationContext(), "Registration Successful", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getApplicationContext(), "Fail to add data " + error, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-    }
 
     public void sendEmail(){
 
@@ -290,3 +271,81 @@ public class SignUp extends AppCompatActivity {
         }
     }
 }
+
+
+//    private void signInWithCredential(PhoneAuthCredential credential) {
+//        mAuth.signInWithCredential(credential)
+//                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                        if (task.isSuccessful()) {
+//
+//
+//                            Toast.makeText(SignUp.this, "Login Successful", Toast.LENGTH_SHORT).show();
+//                            sp.edit().putBoolean("logged",true).apply();
+//                            sp.edit().putString("Mobile",edtPhone.getText().toString().trim()).apply();
+//
+//                            Intent i = new Intent(SignUp.this, NavigationDrawer.class);
+//                            i.putExtra("Mobile Number",edtPhone.getText().toString().trim());
+//                            startActivity(i);
+//                            finish();
+//                        } else {
+//                            Toast.makeText(SignUp.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+//                        }
+//                    }
+//                });
+//    }
+//
+//
+//    private void sendVerificationCode(String number) {
+//        PhoneAuthOptions options =
+//                PhoneAuthOptions.newBuilder(mAuth)
+//                        .setPhoneNumber(number)
+//                        .setTimeout(60L, TimeUnit.SECONDS)
+//                        .setActivity(this)
+//                        .setCallbacks(mCallBack)
+//                        .build();
+//        PhoneAuthProvider.verifyPhoneNumber(options);
+//    }
+//
+//    private PhoneAuthProvider.OnVerificationStateChangedCallbacks
+//
+//            mCallBack = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+//
+//        @Override
+//        public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+//            super.onCodeSent(s, forceResendingToken);
+//            verificationId = s;
+//        }
+//
+//        @Override
+//        public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+//
+//            final String code = phoneAuthCredential.getSmsCode();
+//
+//            if (code != null) {
+//                edtOTP.setText(code);
+//                verifyCode(code);
+//            }
+//        }
+//
+//        @Override
+//        public void onVerificationFailed(FirebaseException e) {
+//            Toast.makeText(SignUp.this, e.getMessage(), Toast.LENGTH_LONG).show();
+//        }
+//    };
+//
+//    private void verifyCode(String code) {
+//        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
+//
+//        String UserName = edtName.getText().toString().trim();
+//        String EmailId = edtEmail.getText().toString().trim();
+//        String Address = city.getText().toString().trim();
+//        String Mobile = edtPhone.getText().toString().trim();
+//        String Password = edtPassword.getText().toString().trim();
+//
+//
+//        addData(UserName,EmailId,Address,Mobile,Password);
+//        sendEmail();
+//        signInWithCredential(credential);
+//    }

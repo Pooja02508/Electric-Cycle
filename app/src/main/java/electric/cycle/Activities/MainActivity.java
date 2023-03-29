@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         fusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(this);
         getLastLocation();
+
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -100,4 +102,5 @@ public class MainActivity extends AppCompatActivity {
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
+
 }

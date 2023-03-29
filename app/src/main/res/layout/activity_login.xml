@@ -19,6 +19,19 @@
         android:layout_marginLeft="10dp">
 
         <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:hint="Email Id"
+            android:textColorHint="@color/text_color"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/text_border"
+            android:paddingLeft="15dp"
+            android:textColor="@color/black" />
+
+        <EditText
             android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="60dp"

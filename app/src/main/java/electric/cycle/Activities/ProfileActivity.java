@@ -41,7 +41,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         sp = getSharedPreferences("login",MODE_PRIVATE);
-        String MobileNumber=sp.getString("Mobile",null);
+        String MobileNumber=sp.getString("UserMobile",null);
 
         mAuth = FirebaseAuth.getInstance();
 

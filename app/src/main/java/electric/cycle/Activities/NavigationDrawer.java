@@ -68,7 +68,7 @@ public class NavigationDrawer extends AppCompatActivity {
 
 
         sp = getSharedPreferences("login",MODE_PRIVATE);
-        String MobileNumber=sp.getString("Mobile",null);
+        String MobileNumber=sp.getString("UserMobile",null);
 
         toggle=new ActionBarDrawerToggle(this,drawer,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);

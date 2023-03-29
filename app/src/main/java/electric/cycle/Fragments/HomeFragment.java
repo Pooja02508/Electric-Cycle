@@ -64,7 +64,7 @@ public class HomeFragment extends Fragment implements BikeAdapter.ItemClickListe
         loaction_text=root.findViewById(R.id.location_text);
 
         sp = getActivity().getSharedPreferences("login",MODE_PRIVATE);
-        String MobileNumber=sp.getString("Mobile",null);
+        String MobileNumber=sp.getString("UserMobile","");
         String UserLocation=getActivity().getIntent().getStringExtra("UserLocation");
 
         if(MobileNumber==null){
